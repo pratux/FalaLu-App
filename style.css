@@ -61,14 +61,14 @@ header {
 .profile-wrapper {
   display: flex;
   justify-content: center;
-  margin: 1rem 0;
+  margin: 0rem 0;
 }
 
 .profile-pic {
   width: 160px;
   height: 160px;
-  border-radius: 50%;
-  border: 8px solid var(--accent);
+  border-radius: 40%;
+  border: 3px solid var(--accent);
   object-fit: cover;
 }
 
@@ -108,4 +108,15 @@ h1 {
 .btn:hover {
   background: var(--accent);
   color: #fff;
+}
+.modal-content {
+  width: 95%;       /* amplia um pouco a largura */
+  height: 75vh;     /* ocupa 95% da altura da viewport */
+  max-width: 600px; /* se quiser um teto em pixel */
+  max-height: 800px;
+  /* mantêm o resto igual */
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
 }
