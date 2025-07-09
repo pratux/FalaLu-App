@@ -1,0 +1,121 @@
+<!DOCTYPE html> 
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consultora Financeira Rastelli</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="favicon.ico">
+  <meta name="theme-color" content="#B2191D">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;500&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      background: url('https://rastelliparis.fr/cdn/shop/files/rastelli-bg.jpg?v=1715097154') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .container {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 24px 24px 0 0;
+      box-shadow: 0 -4px 12px rgba(0,0,0,0.15);
+      padding: 24px 16px 32px;
+      width: 100%;
+      max-width: 480px;
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      backdrop-filter: blur(5px);
+    }
+    .logo {
+      max-width: 120px;
+      margin-top: -16px;
+      margin-bottom: 16px;
+    }
+    .title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 12px;
+    }
+    .title img {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+    }
+    h1 {
+      font-family: 'Playfair Display', serif;
+      color: #B2191D;
+      font-size: 1.5rem;
+      margin: 0;
+      line-height: 1.4;
+    }
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      color: #555;
+      margin-bottom: 16px;
+    }
+    p {
+      color: #333;
+      font-size: 1rem;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+    iframe {
+      width: 100%;
+      height: 500px;
+      border: none;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    @media (min-width: 768px) {
+      .container {
+        border-radius: 24px;
+        padding: 40px;
+        position: static;
+        transform: none;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(function(registration) {
+            console.log('ServiceWorker registrado com sucesso:', registration.scope);
+          }, function(err) {
+            console.log('Falha ao registrar o ServiceWorker:', err);
+          });
+      });
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <img src="Logotipo_Rastelli.jpg" alt="Logo Rastelli" class="logo">
+    <div class="title">
+      <img src="avatarLu2.jpg" alt="Avatar Lu">
+      <h1>Fala Lu</h1>
+    </div>
+    <h2>Sua consultora financeira virtual</h2>
+    <iframe
+      src="https://www.chatbase.co/chatbot-iframe/Bi6_AlgN623MT1P5DJ8pH">
+    </iframe>
+  </div>
+</body>
+</html>
