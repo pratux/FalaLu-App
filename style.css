@@ -109,14 +109,59 @@ h1 {
   background: var(--accent);
   color: #fff;
 }
+
+/* modal oculto por padrão */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  /* animação de fade */
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+/* quando abrir */
+.modal.open {
+  display: flex;
+  opacity: 1;
+}
+
+/* conteúdo full-screen com slide-up */
 .modal-content {
-  width: 95%;       /* amplia um pouco a largura */
-  height: 75vh;     /* ocupa 95% da altura da viewport */
-  max-width: 600px; /* se quiser um teto em pixel */
-  max-height: 800px;
-  /* mantêm o resto igual */
-  background: white;
-  border-radius: 12px;
-  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  background: var(--card-bg);
   position: relative;
+  transform: translateY(100%);        /* começa fora da tela */
+  transition: transform 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+/* slide-up quando modal abre */
+.modal.open .modal-content {
+  transform: translateY(0);
+}
+
+/* iframe ocupa tudo */
+.modal-content iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* botão de fechar no topo */
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--text);
+  z-index: 1001;
+  cursor: pointer;
 }

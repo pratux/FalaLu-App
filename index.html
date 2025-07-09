@@ -55,31 +55,31 @@
       });
     }
 
-    // Lógica do modal
+    // lógica do modal
     document.addEventListener('DOMContentLoaded', () => {
-      const modal  = document.getElementById('chatModal');
-      const frame  = document.getElementById('chatFrame');
-      const close  = modal.querySelector('.close-btn');
+      const modal   = document.getElementById('chatModal');
+      const content = modal.querySelector('.modal-content');
+      const frame   = document.getElementById('chatFrame');
+      const closeBtn = modal.querySelector('.close-btn');
       const buttons = document.querySelectorAll('.btn[data-url]');
 
       buttons.forEach(btn => {
         btn.addEventListener('click', () => {
-          frame.src = btn.getAttribute('data-url');
+          frame.src = btn.dataset.url;
           modal.classList.add('open');
         });
       });
 
-      close.addEventListener('click', () => {
+      const fechar = () => {
         modal.classList.remove('open');
-        frame.src = '';
-      });
-
-      // Fecha modal ao clicar fora do conteúdo
-      modal.addEventListener('click', e => {
-        if (e.target === modal) {
-          modal.classList.remove('open');
+        content.addEventListener('transitionend', () => {
           frame.src = '';
-        }
+        }, { once: true });
+      };
+
+      closeBtn.addEventListener('click', fechar);
+      modal.addEventListener('click', e => {
+        if (e.target === modal) fechar();
       });
     });
   </script>
