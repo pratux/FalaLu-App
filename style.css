@@ -1,0 +1,111 @@
+/* Reset simples */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #f8f1e6;
+  --card-bg: #fffaf5;
+  --text: #4a3828;
+  --accent: #c99b6e;
+  --btn-bg: #fdf8f2;
+  --btn-border: #e6d4c1;
+  --btn-text: #8c6b4c;
+}
+
+body {
+  background: var(--bg);
+  font-family: 'Roboto', sans-serif;
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.container {
+  background: var(--card-bg);
+  width: 100%;
+  max-width: 400px;
+  border-radius: 24px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  height: 32px;
+}
+
+.menu-btn {
+  background: none;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.menu-btn span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--text);
+}
+
+.profile-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.profile-pic {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 8px solid var(--accent);
+  object-fit: cover;
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin-top: 0.5rem;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin: 0.75rem 0 1.25rem;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.btn {
+  display: block;
+  text-decoration: none;
+  background: var(--btn-bg);
+  border: 1px solid var(--btn-border);
+  border-radius: 12px;
+  padding: 0.75rem;
+  text-align: center;
+  font-weight: 500;
+  color: var(--btn-text);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.btn:hover {
+  background: var(--accent);
+  color: #fff;
+}
